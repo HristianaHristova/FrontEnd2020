@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 2-1</title>
+    <meta charset="utf8" />
+    <script>
+        let A = [],
+            DateFilter = [],
+            B = [],
+            C = [],
+            Days = [
+                "неделя",
+                "понеделник",
+                "вторник",
+                "сряда",
+                "четвъртък",
+                "петък",
+                "събота"
+            ];
+
+        A.push(new Date());
+        A.push(new Date(2018, 11, 8));
+
+        A[1].setHours(21);
+
+
+        A.forEach((element, index) => {
+            let Date = element.getDate();
+            let Month = element.getMonth() + 1;
+            let Year = element.getFullYear();
+            DateFilter.push(`${Date}.${Month}.${Year}`)
+        })
+
+        console.log(DateFilter);
+
+
+        B = A.map(element => element.getDay());
+
+        console.log(B);
+
+        A.forEach((element, index) => {
+            let eDate = element.getDate(),
+                Month = element.getMonth() + 1,
+                Year = element.getFullYear(),
+                DateFilter = `${eDate}.${Month}.${Year}`,
+                Hours = element.getHours(),
+                Minutes = element.getMinutes(),
+                Seconds = element.getSeconds(),
+                TimeTemplate = `${Hours}:${Minutes}:${Seconds}`,
+                DayOfWeek = Days[B[index]],
+                DaysInMonth = new Date(Year, Month, 0).getDate();
+
+            C.push(`Дата: ${DateFilter}, час: ${TimeTemplate}, ${DayOfWeek}. ${DaysInMonth} дни`)
+        })
+
+        console.log(C);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
