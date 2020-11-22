@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 4</title>
+    <script>
+        class Person {
+            constructor() {
+                this.salary = 1000;
+            }
+
+            stoleSalaryInfo() {
+                let salary = this.salary;
+
+                function getSecretSalaryInfo() {
+                    return salary;
+                }
+                return getSecretSalaryInfo()
+            }
+        }
+
+
+        let p1 = new Person();
+        console.log(p1.stoleSalaryInfo());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

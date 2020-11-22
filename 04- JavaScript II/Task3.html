@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 3</title>
+    <script>
+        class Item {
+            constructor(name, discount) {
+                this.name = name;
+                this.discount = discount;
+                this.realPrice = function() {
+                    return this.getPrice() * (100 - this.discount) / 100;
+                }
+            }
+
+            getPrice() {
+                let price = 1000;
+                return price;
+            }
+        }
+
+        item = new Item("dress", 40);
+        console.log(item.getPrice());
+        console.log(item.realPrice());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
